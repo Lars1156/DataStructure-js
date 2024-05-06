@@ -11,3 +11,4 @@ const person1 = new Person ("Pooja",25,'Female');
 const person2 = new Person("Sam", 25 , 'Male');
 console.log(person1);
 console.log(person2);
+console.log(person1.greet());
