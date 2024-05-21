@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search Tree with User Input</title>
+</head>
+<body>
+  <h1>Binary Search Tree</h1>
+  <div id="bst-container"></div>
+  <form id="user-input-form">
+    <label for="input-number">Enter a number:</label>
+    <input type="number" id="input-number" required>
+    <button type="button" onclick="insertNumber()">Insert</button>
+    <button type="button" onclick="searchNumber()">Search</button>
+  </form>
+  <p id="result"></p>
+  <script>
+    // Same BinarySearchTree class implementation as before
+
+const bst = new BinarySearchTree();
+const resultElement = document.getElementById("result");
+
+function insertNumber() {
+  const inputNumber = Number(document.getElementById("input-number").value);
+  bst.insert(inputNumber);
+  // Update visual representation of the tree if implemented (optional)
+  clearResult(); // Clear previous search result
+}
+
+function searchNumber() {
+  const searchTarget = Number(document.getElementById("input-number").value);
+  const found = bst.search(searchTarget);
+  resultElement.textContent = found
+    ? `Number ${searchTarget} found in the Binary Search Tree.`
+    : `Number ${searchTarget} not found in the Binary Search Tree.`;
+}
+
+function clearResult() {
+  resultElement.textContent = "";
+}
+
+
+  </script>
+</body>
+</html>
