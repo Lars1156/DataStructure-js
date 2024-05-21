@@ -1,3 +1,4 @@
+const str = "madam";
 
 
 function isPalindrome(str){
